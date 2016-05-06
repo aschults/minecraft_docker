@@ -33,7 +33,7 @@ ls -1 /mc_mods.d | while read f ; do
 
   dir=$PWD
   cd $fn
-  find . ! -name "."  -type d -exec mkdir "/mc_srv/{}" \;
+  find . ! -name "."  -type d -exec mkdir -p "/mc_srv/{}" \;
   find . -type f -exec ln -s "$fn/{}" "/mc_srv/{}" \;
   cd $dir
 done
