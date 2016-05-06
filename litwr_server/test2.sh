@@ -1,6 +1,8 @@
 set -e
 IMAGE_TAG=litwr_srv
 CONTAINER_NAME=mcsrv1
+( cd ../minecraft_server_base ; docker build -t aschults/minecraft_docker:server_base . )
+( cd ../minecraft_server_1.7.10 ; docker build -t aschults/minecraft_docker:server_1.7.10 . )
 docker build -t $IMAGE_TAG . 
 docker stop $CONTAINER_NAME || true
 docker rm $CONTAINER_NAME || true

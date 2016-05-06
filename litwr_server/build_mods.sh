@@ -5,12 +5,10 @@ mode=${LITWR_MODE:-hungry}
 ucmode=`echo $mode | tr "bh" "BH"`
 fn="LifeInTheWoodsRenaissanceServer${ucmode}.zip"
 url="http://lifeinthewoods.ca/litwr/repository/server/$mode/$vers/$fn"
-mkdir litwr_srv
-cd litwr_srv
+mkdir -p /mc_mods.d/litwr_srv
+cd /mc_mods.d/litwr_srv
 wget "$url"
 unzip $fn
 rm $fn
 
-ln -sf /litwr_srv/mods /mc_srv/
-ln -sf /litwr_srv/config /mc_srv/
 
