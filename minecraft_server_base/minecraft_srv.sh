@@ -1,4 +1,5 @@
 set -e
+source /mc_vars.sh
 cd /mc_srv
 sh /srv_gen_properties.sh >server.properties
 cat <<EOF >eula.txt
@@ -40,4 +41,4 @@ done
 
 
 ln -sf "/savegames/${level_name:-world}" /mc_srv/
-java $JAVA_OPTS -jar forge-1.7.10-10.13.4.1614-1.7.10-universal.jar nogui
+java $JAVA_OPTS -jar forge-$FORGE_FULL_VERSION-universal.jar nogui

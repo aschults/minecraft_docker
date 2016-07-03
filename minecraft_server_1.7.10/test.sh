@@ -1,4 +1,6 @@
 set -e
+basetag=aschults/minecraft_docker:server_base
+docker build -t $basetag ../minecraft_server_base
 IMAGE_TAG=minecraft_srv
 CONTAINER_NAME=mcsrv1
 docker build -t $IMAGE_TAG . 
